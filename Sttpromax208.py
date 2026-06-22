@@ -27,13 +27,13 @@ ORDER_CONFIRM_IMAGE = "https://iili.io/Cn6QeBj.md.png"
 ORDER_PENDING_IMAGE = "https://iili.io/Cn68MG9.md.png"
 
 PAYMENT_INFO = (
-    "╔═══════════════════╗\n"
+    "╔══════════════════╗\n"
     "      <b>💰 ငွေလွှဲရန် အကောင့်အချက်အလက် 💰</b>\n"
-    "╚═══════════════════╝\n\n"
+    "╚══════════════════╝\n"
     "<b>🖼️ KPay / WavePay</b>\n\n"
     "👤 Name: <b>Daw Aye Nwet</b>\n\n"
     "☎️ Number: <code>09756068378</code> (Tap to copy)\n\n"
-    "📌 Note မှာ <b>Tg Acc Name</b> သာ ရေးပါရန် ⚠️\n\n"
+    "📌 Note မှာ <b>Tg Acc Name</b> သာ ရေးပါရန် ⚠️\n"
     "─────────────────────\n"
     "⚠️ <i>ငွေလွှဲပြီးပါက ပြေစာ (Screenshot) ပို့ပေးရန် မမေ့ပါနှင့်ခင်ဗျာ။</i>"
 )
@@ -391,8 +391,8 @@ def build_tt_multiselect_menu(selected_items: dict):
             f"🛒 ရွေးထားသည်: {len(selected_items)} မျိုး | စုစုပေါင်း: {total:,} ks",
             callback_data="tt_summary"
         )])
-        kb.append([InlineKeyboardButton("✅ အတည်ပြုပြီး ဆက်လက်မည်", callback_data="tt_confirm_multi")])
-        kb.append([InlineKeyboardButton("🗑️ အားလုံးပစ်မည်", callback_data="tt_clear")])
+        kb.append([InlineKeyboardButton("✅ အတည်ပြုပြီး ဆက်သွားမည်", callback_data="tt_confirm_multi")])
+        kb.append([InlineKeyboardButton("🗑️ အားလုံးဖြုတ်မည်", callback_data="tt_clear")])
     kb.append([InlineKeyboardButton("🔙 Back", callback_data="buy")])
     return InlineKeyboardMarkup(kb), total
 
@@ -974,9 +974,9 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "╚═══════════════╝\n\n"
             f"👤 User ID: <code>{user_id}</code>\n"
             f"💰 လက်ကျန်ငွေ: <b>{balance:,} ks</b>\n\n"
-            "━━━━━━━━━━━━━━━━━━━━\n"
+            "━━━━━━━━━━━━━━━━━━━━━\n"
             "💡 Wallet ငွေဖြင့် ဝယ်ယူပါက ပြေစာမလိုပဲ ရှယ်မြန်!\n"
-            "━━━━━━━━━━━━━━━━━━━━"
+            "━━━━━━━━━━━━━━━━━━━━━"
         )
         kb = [
             [InlineKeyboardButton("➕ ငွေဖြည့်မည် (Top-up)", callback_data="wallet_topup")],
@@ -1096,7 +1096,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 f"📦 {service_full}{qty_display}\n\n"
                 "⏰ ကြာချိန်ကတော့ ဝန်ဆောင်မှုအလိုက် စတင်လုပ်ဆောင်ပေးနေပါပြီ \n\n"
                 "🙏 Thank You So Much!\n\n"
-                "??‍💻 Owner - @just_knox\n\n"
+                "🧑‍💻 Owner - @just_knox\n\n"
                 "🛍️ နောက်ထပ်အသစ်ဝယ်ရန် /start ကိုနှိပ်ပါ"
             )
             try:
@@ -1338,17 +1338,17 @@ async def text_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 await update.message.reply_photo(
                     photo=ORDER_CONFIRM_IMAGE,
                     caption=(
-                        "╔═════════════════════╗\n"
+                        "╔═══════════════════╗\n"
                         "  🎉 <b>Wallet ဖြင့် ဝယ်ယူမှု အောင်မြင်ပါသည်!</b> 🎉\n"
-                        "╚═════════════════════╝\n\n"
+                        "╚═══════════════════╝\n\n"
                         f"🔖 <b>Order ID:</b> <code>#{order_id}</code>\n"
                         f"📦 <b>အမျိုးအစား:</b> <code>{desc}</code>\n"
                         f"💵 <b>ကျသင့်ငွေ:</b> <code>{price:,} ks</code>\n"
                         f"💳 <b>ကျန်ရှိသော လက်ကျန်ငွေ:</b> <code>{get_balance(user_id):,} ks</code>\n"
-                        "─────────────────────────\n"
+                        "─────────────────────\n"
                         "⚙️ <i>သင်၏ Order ကို စတင်ဆောင်ရွက်နေပြီဖြစ်၍ ခေတ္တစောင့်ဆိုင်းပေးပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။</i>\n\n"
                         "🙏 <b>နောက်အသစ်တစ်ခု ဝယ်ရန် /start ကိုနှိပ်ပါ!</b>\n"
-                        "─────────────────────────"
+                        "─────────────────────"
                     ),
                     parse_mode="HTML"
                 )
